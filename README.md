@@ -2,13 +2,13 @@
 
 ## `@vue/cli` **3.x**使用vw实现移动端适配
 
-第一步，先用vue-cli快速构建出一个项目，然后，安装postcss，postcss-pxtorem，postcss-loader，postcss-import，postcss-url 。。。
+**第一步**，先用vue-cli快速构建出一个项目，然后，安装postcss，postcss-pxtorem，postcss-loader，postcss-import，postcss-url ...
 
 ```
 npm i postcss-aspect-ratio-mini postcss-px-to-viewport postcss-write-svg postcss-cssnext postcss-viewport-units cssnano --S
 ```
 
-**注意:** 通过Vue-cli3.x构建的项目，package.json里只有如下配置，需删除
+> 注意: 通过Vue-cli3.x构建的项目，package.json里只有如下配置，需删除
 
 ```js
 "postcss": {
@@ -23,8 +23,6 @@ npm i postcss-aspect-ratio-mini postcss-px-to-viewport postcss-write-svg postcss
 ```js
 module.exports = {
   plugins: {
-    "postcss-import": {},
-    "postcss-url": {},
     "postcss-aspect-ratio-mini": {},
     "postcss-write-svg": { utf8: false },
     "postcss-cssnext": {},
@@ -136,7 +134,7 @@ module.exports = {
 }
 ```
 
-**特别声明：**由于`cssnext`和`cssnano`都具有`autoprefixer`,事实上只需要一个，所以把默认的`autoprefixer`删除掉，然后把`cssnano`中的`autoprefixer`设置为`false`。对于其他的插件使用，稍后会简单的介绍。
+> **特别声明：**由于`cssnext`和`cssnano`都具有`autoprefixer`,事实上只需要一个，所以把默认的`autoprefixer`删除掉，然后把`cssnano`中的`autoprefixer`设置为`false`。对于其他的插件使用，稍后会简单的介绍。
 
 ### [postcss-cssnext](https://github.com/MoOx/postcss-cssnext)
 
@@ -411,7 +409,7 @@ npm i cssnano-preset-advanced --save-dev
 
 解决`1px`的方案除了这个插件之外，还有其他的方法。可以阅读前期整理的《[再谈Retina下`1px`的解决方案](https://www.w3cplus.com/css/fix-1px-for-retina.html)》一文。
 
-**特别声明：**由于有一些低端机对`border-image`支持度不够友好，个人建议你使用`background-image`的这个方案。
+> **特别声明：**由于有一些低端机对`border-image`支持度不够友好，个人建议你使用`background-image`的这个方案。
 
 ### [CSS Modules](https://github.com/css-modules/css-modules)
 
@@ -425,9 +423,9 @@ Vue中的`vue-loader`已经集成了CSS Modules的功能，个人建议在项目
 
 到此为止，有关于所需要的PostCSS已配置完。并且简单的介绍了各个插件的作用，至于详细的文档和使用，可以参阅对应插件的官方文档。
 
-vw最终的解决方案，就是使用`viewport`的polyfill：[Viewport Units Buggyfill](https://link.jianshu.com?t=https%3A%2F%2Fgithub.com%2Frodneyrehm%2Fviewport-units-buggyfill)。使用`viewport-units-buggyfill`主要分以下几步走：
+vw最终的解决方案，就是使用`viewport`的polyfill：`Viewport Units Buggyfill`。使用`viewport-units-buggyfill`主要分以下几步走：
 
-#### 引入JavaScript文件
+**引入JavaScript文件**
 
 `viewport-units-buggyfill`主要有两个JavaScript文件：`viewport-units-buggyfill.js`和`viewport-units-buggyfill.hacks.js`。你只需要在你的HTML文件中引入这两个文件。比如在Vue项目中的`index.html`引入它们：
 
@@ -502,7 +500,7 @@ img {
 }
 ```
 
-而对于`::after`之类的，就算是里面使用了`vw`单位，[Viewport Units Buggyfill](https://link.jianshu.com?t=https%3A%2F%2Fgithub.com%2Frodneyrehm%2Fviewport-units-buggyfill)对其并不会起作用。比如：
+而对于`::after`之类的，就算是里面使用了`vw`单位，`Viewport Units Buggyfill`对其并不会起作用。比如：
 
 ```css
 // 编译前
