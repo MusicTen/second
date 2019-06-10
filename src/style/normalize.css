@@ -1,0 +1,103 @@
+/* 语义化标签在不同浏览器上的默认样式会有一些差异，这些差异导致相同的样式表在不同
+  的浏览器上显示结果不同。换言之在进行布局时，不要依赖标签默认样式进行编写，必须
+  给用到的语义化标签，设定统一明确的初始样式。这个设定过程称为CSSReset(样式重置)
+  目前比较流行的时通过normalize.css来完成样式初始化，我们可以修改normalize.css
+  来适应自己的项目，所有的Html都必须引入它 */
+html {
+  overflow-x: auto;
+  overflow-y: scroll;
+}
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+input,
+p,
+blockquote,
+th,
+td {
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #ffffff;
+  color: #666666;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  padding: 0;
+  text-align: left;
+}
+select {
+  font-size: 12px;
+}
+table {
+  border-collapse: collapse;
+}
+fieldset,
+img {
+  border: 0 none;
+}
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+fieldset p {
+  margin: 0;
+  padding: 0 0 0 8px;
+}
+legend {
+  display: none;
+}
+address,
+caption,
+em,
+strong,
+th,
+i {
+  font-style: normal;
+  font-weight: 400;
+}
+table caption {
+  margin-left: -1px;
+}
+hr {
+  border-bottom: 1px solid #ffffff;
+  border-top: 1px solid #e4e4e4;
+  border-width: 1px 0;
+  clear: both;
+  height: 2px;
+  margin: 5px 0;
+  overflow: hidden;
+}
+ol,
+ul {
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+}
+caption,
+th {
+  text-align: left;
+}
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: ””;
+}
