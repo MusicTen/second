@@ -11,6 +11,7 @@ module.exports = {
       minPixelValue: 1,
       mediaQuery: false
     },
-    "postcss-viewport-units": {}
+    "postcss-viewport-units": {},
+    "autoprefixer": {}
   }
 };

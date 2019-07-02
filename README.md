@@ -1,6 +1,6 @@
 # second
 
-## `@vue/cli` **3.x**使用vw实现移动端适配
+## `@vue/cli 3.x`使用vw实现移动端适配
 
 **第一步**，先用vue-cli快速构建出一个项目，然后，安装postcss，postcss-pxtorem，postcss-loader，postcss-import，postcss-url ...
 
@@ -28,10 +28,10 @@ module.exports = {
     "postcss-cssnext": {},
     "postcss-px-to-viewport": {
       viewportWidth: 750,
-      unitPrecision: 3,
+      unitPrecision: 3, // 指定px转换为视窗单位值的小数位数（很多时候无法整除）
       viewportUnit: "vw",
       selectorBlackList: [".ignore", ".hairlines"],
-      minPixelValue: 1,
+      minPixelValue: 1, // 小于或等于1px不转换为视窗单位
       mediaQuery: false
     },
     "postcss-viewport-units": {}
